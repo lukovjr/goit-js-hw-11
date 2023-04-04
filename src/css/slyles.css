@@ -1,0 +1,108 @@
+.header {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: rgb(9, 134, 236);
+      padding-top: 24px;
+      padding-bottom: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .search-form {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .input {
+      width: 300;
+      border-radius: 5px;
+      padding-left: 10px;
+      border: none;
+    }
+
+    .input::placeholder {
+        color: #cccccc;
+    }
+        
+    .btn-submit {
+      margin-left: 10px;
+      background-color: #fafa03;
+      color: rgba(12, 1, 1, 0.986);
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 400;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    .btn-submit:hover {
+      background-color: rgb(170, 207, 33);
+      color: #000000;
+      box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .load-more {
+      width: 200;
+      display: block;
+      background-color: rgb(9, 134, 236);
+      color: rgba(12, 1, 1, 0.986);
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 400;
+      border: none;
+      border-radius: 5px;
+      margin: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .load-more:hover {
+      background-color: #fafa03;
+      color: #000000;
+      box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    .gallery {
+      margin: 0 auto;
+      max-width: 1500px;
+      margin-top: 50px;
+      padding-bottom: 20px;
+      display:flex;
+      flex-wrap: wrap;
+      gap:20px;    
+    }
+    
+    .photo-card {
+      display: block;
+      width: 270px;
+      border-radius: 0 0 6px 6px;
+      padding-right: 3px;
+      padding-left: 6px;
+      padding-top:3px;
+      color: black;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+      
+    img {
+      width: 264px;
+      height: 200px;
+      padding: none;
+    }
+    
+    .info {
+      display:flex;
+      justify-content: center;
+      gap:10px;
+      font-size: 12px;
+    }
+      
+    .info-item{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
