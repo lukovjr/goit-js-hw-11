@@ -22,9 +22,12 @@ async function onSearchImageBtnClick(event) {
 
   total += fetchImgAPI.perPage;
 
-  if (inputEl.value === '') {
+ 
+  if (!(inputEl.value.trim())) {
+    Notiflix.Notify.failure(`Enter some...`);
     return;
   }
+
   fetchImgAPI.page = 1;
 
   fetchImgAPI.photo = inputEl.value.trim();
