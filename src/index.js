@@ -15,6 +15,8 @@ let lightbox;
 
 searchFormEl.addEventListener('submit', onSearchImageBtnClick);
 loadMoreEl.addEventListener('click', onLoadMoreBtnClick);
+window.addEventListener('scroll', onScroll);
+window.addEventListener('scroll', infinityScroll);
 
 async function onSearchImageBtnClick(event) {
   event.preventDefault();
@@ -132,3 +134,32 @@ function makeGalleryMarkUp(galleryItems) {
     )
     .join('');
   }
+
+
+  function onScroll(e) {
+    const { height: cardHeight } = document
+    .querySelector(".gallery")
+    .firstElementChild.getBoundingClientRect();
+  console.log(cardHeight);
+  
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: "smooth",
+  });
+  }
+
+
+
+//   async function infinityScroll() {
+//   const docRect = document.documentElement.getBoundingClientRect();
+//   if (docRect.bottom < document.documentElement.clientHeight + 200) {
+//     fetchImgAPI.page++;
+//     try {
+//       const { data } = await fetchImgAPI.axiosReturn();
+//       makeGalleryMarkUp(galleryItems);
+      
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   }
+// }
