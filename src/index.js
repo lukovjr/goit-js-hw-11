@@ -16,6 +16,7 @@ let lightbox;
 searchFormEl.addEventListener('submit', onSearchImageBtnClick);
 loadMoreEl.addEventListener('click', onLoadMoreBtnClick);
 window.addEventListener('scroll', onScroll);
+window.addEventListener('scroll', infinityScroll);
 
 
 async function onSearchImageBtnClick(event) {
@@ -148,20 +149,35 @@ function makeGalleryMarkUp(galleryItems) {
   });
   }
 
+  /////////////////////////////////////////////////////////////////Репета infinityScroll /////////////////////////////////////////////
 
-
-const onEntry = entries => {
-  entries.forEach(entry => {
+// const onEntry = entries => {
+//   entries.forEach(entry => {
    
-    if (entry.isIntersecting && fetchImgAPI.photo !== '') {
-      onLoadMoreBtnClick();
-    }
-  });
-};
+//     if (entry.isIntersecting && fetchImgAPI.photo !== '') {
+//       onLoadMoreBtnClick();
+//     }
+//   });
+// };
 
-const options = {
-   rootMargin: '300px'
-};
+// const options = {
+//    rootMargin: '300px'
+// };
 
-const observer = new IntersectionObserver(onEntry, options);
-observer.observe(loadMoreEl);
+// const observer = new IntersectionObserver(onEntry, options);
+// observer.observe(loadMoreEl);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+async function infinityScroll() {
+    const docRect = document.documentElement.getBoundingClientRect();
+    if (docRect.bottom < document.documentElement.clientHeight + 200) {
+      fetchImgAPI.page++;
+      try {
+        onLoadMoreBtnClick();
+            } catch (err) {
+              console.log(err);
+            }
+      
+    };
+  };
